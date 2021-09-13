@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'linktree/css/home_page.css' %}">
+</head>
+<body>
+    <main>
+        <section id="header">
+            <div id="logo-container">
+                <img src="{% static 'linktree/images/Design5.png' %}" alt="">
+            </div>
+            <span>
+                @imobiliaria.felicita.gravatai  
+            </span>
+        </section>
+        <section id="buttons">
+            <div class="container">
+                {% for link in links %}
+                    <a href="{{ link.href }}">{{link.text}}</a>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>
